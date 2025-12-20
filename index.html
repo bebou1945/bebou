@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>BEBOU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --blue:#2f3cff;
+  --green:#25D366;
+  --yellow:#ffcc00;
+  --bg:#f4f6fb;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+}
+
+/* ===== HEADER ===== */
+header{
+  background:var(--blue);
+  color:#fff;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.search{
+  flex:1;
+}
+
+.search input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+}
+
+.auth-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.auth-buttons button{
+  padding:8px 14px;
+  border-radius:6px;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+
+#btnLogin{
+  background:#fff;
+  color:var(--blue);
+}
+
+#btnSignup{
+  background:var(--yellow);
+  color:#000;
+}
+
+.auth-buttons button:hover{
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
+
+/* ===== SECTIONS ===== */
+section{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+.hidden{display:none}
+
+/* ===== PRODUITS ===== */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  margin:10px 0 5px;
+}
+
+.price{
+  color:var(--blue);
+  font-weight:bold;
+}
+
+.contact{
+  margin-top:10px;
+  display:block;
+  text-align:center;
+  background:var(--green);
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.contact:hover{
+  opacity:.85;
+}
+
+/* ===== AUTH FORM ===== */
+.form-box{
+  max-width:400px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.form-box h2{text-align:center}
+
+.form-box input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+
+.form-box button{
+  width:100%;
+  padding:10px;
+  background:var(--blue);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#1e2be0;
+  color:#fff;
+  padding:30px 20px;
+  margin-top:40px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="logo">🛒 BEBOU</div>
+
+  <div class="search">
+    <input type="text" placeholder="Rechercher un produit...">
+  </div>
+
+  <div class="auth-buttons">
+    <button id="btnLogin">Connexion</button>
+    <button id="btnSignup">Inscription</button>
+  </div>
+</header>
+
+<!-- ===== PRODUITS ===== -->
+<section id="home">
+  <h2>Produits récents</h2>
+  <div class="products">
+    <div class="card">
+      <h3>Samsung Galaxy</h3>
+      <p>Occasion – très bon état</p>
+      <div class="price">80 €</div>
+      <a class="contact" href="#">📞 Contacter le vendeur</a>
+    </div>
+
+    <div class="card">
+      <h3>Chaussures homme</h3>
+      <p>Neuf</p>
+      <div class="price">25 €</div>
+      <a class="contact" href="#">📞 Contacter le vendeur</a>
+    </div>
+
+    <div class="card">
+      <h3>Sandales femme</h3>
+      <p>Très bon état</p>
+      <div class="price">15 €</div>
+      <a class="contact" href="#">📞 Contacter le vendeur</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONNEXION ===== -->
+<section id="login" class="hidden">
+  <div class="form-box">
+    <h2>Connexion</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Mot de passe">
+    <button>Se connecter</button>
+  </div>
+</section>
+
+<!-- ===== INSCRIPTION ===== -->
+<section id="signup" class="hidden">
+  <div class="form-box">
+    <h2>Inscription</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Mot de passe">
+    <button>S'inscrire</button>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <b>BEBOU</b><br>
+      À propos<br>
+      Devenir vendeur<br>
+      Contact
+    </div>
+    <div>
+      <b>Aide</b><br>
+      Centre d’aide<br>
+      Sécurité<br>
+      Conditions
+    </div>
+    <div>
+      <b>Paiement</b><br>
+      Paiement sécurisé<br>
+      Livraison locale
+    </div>
+  </div>
+</footer>
+
+<script>
+const home = document.getElementById('home');
+const login = document.getElementById('login');
+const signup = document.getElementById('signup');
+
+btnLogin.onclick = () => {
+  home.classList.add('hidden');
+  signup.classList.add('hidden');
+  login.classList.remove('hidden');
+};
+
+btnSignup.onclick = () => {
+  home.classList.add('hidden');
+  login.classList.add('hidden');
+  signup.classList.remove('hidden');
+};
+</script>
+
+</body>
+</html>
